@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap');
+/* New Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+/* Original CSS + a few small tweaks */
 
 html,
 body {
   margin: 0;
   border: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .header {
@@ -17,6 +21,7 @@ body {
 .title {
   padding: 50px 25px;
   text-align: center;
+  background-color: cadetblue;
 }
 
 h1 {
@@ -31,10 +36,26 @@ h4 {
 
 img {
   display: block;
+  width: 100%;
 }
+
+/* viewport is 960px or smaller, the image displayed is landscape */
+
+.square {
+  display: none;
+}
+
+/* viewport is 960px or larger, the image displayed is square */
 
 @media (min-width: 960px) {
   .header {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .square {
+    grid-column: 2;
+    display: block;
+  }
+  .landscape {
+    display: none;
   }
 }
